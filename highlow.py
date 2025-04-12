@@ -9,11 +9,13 @@ GPIO.setmode(GPIO.BOARD)
 GPIO.setup(LED_PIN, GPIO.OUT)
 
 # Turn the LED off
-GPIO.output(LED_PIN, GPIO.LOW)
+if input("ON/OFF")=="ON":
+  print("HIGH NOW")
+  GPIO.output(LED_PIN, GPIO.HIGH)
+else:
+  print("LOW NOW")
+  GPIO.output(LED_PIN, GPIO.LOW)
 
-# Wait for 10 seconds
-print("Turning off the LED for 10 seconds...")
 time.sleep(10)
-
 # Clean up the GPIO pins
 GPIO.cleanup()
