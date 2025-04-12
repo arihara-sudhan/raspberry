@@ -2,7 +2,7 @@ import RPi.GPIO as GPIO
 import time
 
 GPIO.setmode(GPIO.BCM)
-led_pin = 17
+led_pin = 11
 GPIO.setup(led_pin, GPIO.OUT)
 
 print("Starting LED blink loop...")
