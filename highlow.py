@@ -1,19 +1,25 @@
 import RPi.GPIO as GPIO
 import time
 
-# Set up the GPIO pin for the on-board LED
-LED_PIN = 19  # The on-board LED is connected to GPIO19 on the Raspberry Pi Model 2 B
-
-# Set the GPIO mode and configure the LED pin as an output
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(LED_PIN, GPIO.OUT)
+led_pin = 17
+GPIO.setup(led_pin, GPIO.OUT)
 
-# Turn the LED off
-GPIO.output(LED_PIN, GPIO.LOW)
+print("Starting LED blink loop...")
 
-# Wait for 10 seconds
-print("Turning off the LED for 10 seconds...")
-time.sleep(10)
+try:
+    while True:
+        GPIO.output(led_pin, GPIO.HIGH)
+        print("LED ON")
+        time.sleep(5)
 
-# Clean up the GPIO pins
-GPIO.cleanup()
+        GPIO.output(led_pin, GPIO.LOW)
+        print("LED OFF")
+        time.sleep(5)
+
+except KeyboardInterrupt:
+    print("Program stopped by user")
+
+finally:
+    GPIO.cleanup()
+    print("GPIO cleanup done")
