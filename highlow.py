@@ -6,19 +6,16 @@ LED_PIN = 17
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(LED_PIN, GPIO.OUT)
 
-# Define the brightness levels
-brightness_levels = [0, 25, 50, 75, 100, 75, 50, 25]
-
-# Create the glowing animation
 try:
     while True:
-        for brightness in brightness_levels:
-            # Set the PWM duty cycle to control the LED brightness
-            pwm = GPIO.PWM(LED_PIN, 1000)
-            pwm.start(brightness)
-            time.sleep(0.1)
-            print(brightness)
-            pwm.stop()
+        # Turn the LED on
+        GPIO.output(LED_PIN, GPIO.HIGH)
+        time.sleep(1)  # Wait for 1 second
+
+        # Turn the LED off
+        GPIO.output(LED_PIN, GPIO.LOW)
+        time.sleep(1)  # Wait for 1 second
+
 except KeyboardInterrupt:
     # Clean up the GPIO pins
     GPIO.cleanup()
