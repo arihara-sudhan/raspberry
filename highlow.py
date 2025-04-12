@@ -17,6 +17,7 @@ try:
             pwm = GPIO.PWM(LED_PIN, 1000)
             pwm.start(brightness)
             time.sleep(0.1)
+            print(brightness)
             pwm.stop()
 except KeyboardInterrupt:
     # Clean up the GPIO pins
