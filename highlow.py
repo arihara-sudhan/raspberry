@@ -1,5 +1,5 @@
 import RPi.GPIO as GPIO
-
+import time
 # Set up the GPIO pin for the on-board LED
 LED_PIN = 47  # The on-board LED is connected to GPIO47 on the Raspberry Pi
 
@@ -9,6 +9,6 @@ GPIO.setup(LED_PIN, GPIO.OUT)
 
 # Turn the LED off
 GPIO.output(LED_PIN, GPIO.LOW)
-
+time.sleep(10)
 # Clean up the GPIO pins
 GPIO.cleanup()
