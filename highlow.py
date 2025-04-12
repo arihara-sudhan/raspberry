@@ -13,11 +13,12 @@ GPIO.output(LED_PIN, GPIO.HIGH)
 print("LED is on")
 
 # Wait for 2 seconds
-time.sleep(2)
+time.sleep(5)
 
 # Turn the LED off
 GPIO.output(LED_PIN, GPIO.LOW)
 print("LED is off")
+time.sleep(5)
 
 # Clean up the GPIO pins
 GPIO.cleanup()
