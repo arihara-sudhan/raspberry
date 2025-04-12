@@ -5,6 +5,7 @@ PIN = 36
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(PIN, GPIO.OUT)
 GPIO.output(PIN, GPIO.HIGH)
+print("TURNED ON")
 time.sleep(30)
 
 GPIO.cleanup()
