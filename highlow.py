@@ -2,7 +2,7 @@ import RPi.GPIO as GPIO
 import time
 
 PIN = int(input("PIN: "))
-GPIO.setmode(GPIO.BOARD)
+GPIO.setmode(GPIO.BCM)
 GPIO.setup(PIN, GPIO.OUT)
 
 print(f"Turning ON PIN {PIN}")
