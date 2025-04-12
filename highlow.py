@@ -1,7 +1,7 @@
 import RPi.GPIO as GPIO
 import time
 
-PIN = 7
+PIN = 40
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(PIN, GPIO.OUT)
 GPIO.output(PIN, GPIO.HIGH)
