@@ -1,7 +1,7 @@
 import RPi.GPIO as GPIO
 import time
 
-PIN = input("PIN: ")
+PIN = int(input("PIN: "))
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(PIN, GPIO.OUT)
 
